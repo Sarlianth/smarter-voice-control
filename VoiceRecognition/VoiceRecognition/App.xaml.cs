@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +15,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace VoiceRecognition
+using Windows.Media.SpeechRecognition;
+using Windows.ApplicationModel.VoiceCommands;
+using Windows.Storage;
+
+using System.Diagnostics;
+using Windows.UI.Popups;
+
+namespace CustomCortanaCommands
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -37,8 +44,14 @@ namespace VoiceRecognition
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -70,8 +83,50 @@ namespace VoiceRecognition
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+
+                try
+                {
+                    StorageFile vcd = await Package.Current.InstalledLocation.GetFileAsync(@"CustomVoiceCommand.xml");
+                    await VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(vcd);
+                }
+                catch (Exception ex)
+                {
+                    Debug.Write("Failed To Register Voice Command Because: " + ex.Message);
+                }
             }
         }
+
+
+
+        protected override async void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+
+            if (args.Kind == ActivationKind.VoiceCommand)
+            {
+                VoiceCommandActivatedEventArgs cmd = args as VoiceCommandActivatedEventArgs;
+                SpeechRecognitionResult result = cmd.Result;
+
+                string commandName = result.RulePath[0];
+
+                MessageDialog dialog = new MessageDialog("");
+
+                switch (commandName)
+                {
+                    case "Shut Down Computer":
+                        //do something
+                        dialog.Content = "This is where you shut down the pc";
+                        break;
+
+                    default:
+                        Debug.WriteLine("Couldnt Find command name ");
+                        break;
+                }
+
+                await dialog.ShowAsync();
+            }
+        }
+
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
