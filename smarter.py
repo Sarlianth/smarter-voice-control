@@ -13,3 +13,11 @@ METHOD_RESET = "reset"
 TCP_IP = '192.168.1.192'
 TCP_PORT = 2081
 BUFFER_SIZE = 10
+
+if api_method == METHOD_BREW:
+	message_to_send = "7"
+elseif api_method == METHOD_RESET
+	message_to_send = "\x10"
+
+quit()
+sys.exit()
