@@ -6,6 +6,7 @@ import json
 #method names
 API_METHOD_BREW = "brew"
 API_METHOD_RESET = "reset"
+API_METHOD_GRIND = "set_grind"
 
 return_code = ""
 
@@ -21,12 +22,15 @@ if api_method == API_METHOD_BREW:
 	message_to_send = "7"
 elif api_method == API_METHOD_RESET:
 	message_to_send = "\x10"
+elif api_method == API_METHOD_GRIND:
+	message_to_send = "\x3c\x7e"
 
 #connection to machine
 try:
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((TCP_IP, TCP_PORT))
 	s.send(str.encode(message_to_send))
+	#s.send(message_to_send)
 	data = s.recv(BUFFER_SIZE)
 	s.close()
 except (socket.error, msg):
