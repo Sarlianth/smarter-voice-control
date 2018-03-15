@@ -113,7 +113,7 @@ namespace CustomCortanaCommands
 
                 switch (commandName)
                 {
-                    case "Shut Down Computer":
+                    case "Turn off":
                         //do something
                         dialog.Content = "This is where you shut down the pc";
                         break;

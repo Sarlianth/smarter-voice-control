@@ -7,19 +7,21 @@
   
 <Example> Example commands here</Example>
   
-  <Command Name="ShutDownComputer">
+  <Command Name="TurnOff">
     <Example>shut down, power off, I'm going to bed</Example>
+    <ListenFor>Turn off [coffee] [machine]</ListenFor>
+    <ListenFor>Power off</ListenFor>
     <ListenFor>Shut down</ListenFor>
-    <ListenFor>Power Off</ListenFor>
-    <ListenFor>I'm going to bed</ListenFor>
-    
-    <Feedback>I'll turn myself off now</Feedback>
-
-    <Navigate/>
-    
-  
-    
+    <Feedback>Goodbye!</Feedback>
+    <Navigate></Navigate>
   </Command>
+  <Command Name="MakeCoffee">
+    <Example>Make a pot of coffee</Example>
+    <ListenFor>Make [me] [a] [pot] coffee</ListenFor>
+    <Feedback>MaKing a pot of coffee!</Feedback>
+    <Navigate></Navigate>
+  </Command>
+
   
 </CommandSet>
 
