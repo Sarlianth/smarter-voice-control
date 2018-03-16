@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
 
 using Windows.Media.SpeechRecognition;
 using Windows.ApplicationModel.VoiceCommands;
@@ -102,29 +103,67 @@ namespace CustomCortanaCommands
         {
             base.OnActivated(args);
 
+            VoiceCommandActivatedEventArgs commandArgs = null;
+            Type navigateToType = null;
+
+
+            // handle voice activaton here
             if (args.Kind == ActivationKind.VoiceCommand)
             {
-                VoiceCommandActivatedEventArgs cmd = args as VoiceCommandActivatedEventArgs;
-                SpeechRecognitionResult result = cmd.Result;
+                var httpClient = new HttpClient();
+                // activated by voice command
+                //GET THE VOICE COMMAND AND ANY PARAMS 
+                commandArgs = args as VoiceCommandActivatedEventArgs;
 
-                string commandName = result.RulePath[0];
+                // get the object back from the result so we can parse it
+                SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
 
-                MessageDialog dialog = new MessageDialog("");
+                string voiceCommandName = speechRecognitionResult.RulePath[0];
+                string textSpoken = speechRecognitionResult.Text;
 
-                switch (commandName)
+                System.Diagnostics.Debug.WriteLine(voiceCommandName);
+                System.Diagnostics.Debug.WriteLine(textSpoken);
+
+                switch(voiceCommandName)
                 {
-                    case "Turn off":
-                        //do something
-                        dialog.Content = "This is where you shut down the pc";
+                    case "TurnOn":
+                        System.Diagnostics.Debug.WriteLine("Turning on");
+                        
                         break;
+                    case "TurnOff":
+                        System.Diagnostics.Debug.WriteLine("Turning off");
 
-                    default:
-                        Debug.WriteLine("Couldnt Find command name ");
+                        break;
+                    case "SetAmount":
+                        System.Diagnostics.Debug.WriteLine("Setting the amount");
+
+                        break;
+                    case "MakeStandardCoffee":
+                        System.Diagnostics.Debug.WriteLine("Standard coffee selected");
+
+                        break;
+                    case "MakeStrongCoffee":
+                        System.Diagnostics.Debug.WriteLine("strong coffee selected");
+
+                        break;
+                    case "MakeWeakCoffee":
+                        System.Diagnostics.Debug.WriteLine("weak coffee selected");
+
+                        break;
+                    case "HotplateOn":
+                        System.Diagnostics.Debug.WriteLine("hotplate on");
+
+                        break;
+                    case "HotplateOff":
+                        System.Diagnostics.Debug.WriteLine("hotplate off");
+
+                        break;
+                    case "DefaultSetting":
+                        System.Diagnostics.Debug.WriteLine("reset to default");
+                        
                         break;
                 }
 
-                await dialog.ShowAsync();
-            }
         }
 
 

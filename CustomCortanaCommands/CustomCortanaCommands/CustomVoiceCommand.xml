@@ -3,26 +3,73 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   
 <CommandSet xml:lang="en-us" Name="CustomCommandSet">
-  <CommandPrefix> Listen Up </CommandPrefix>
-  
-<Example> Example commands here</Example>
-  
+<CommandPrefix> Hey Cortana </CommandPrefix>  
   <Command Name="TurnOff">
     <Example>shut down, power off, I'm going to bed</Example>
     <ListenFor>Turn off [coffee] [machine]</ListenFor>
-    <ListenFor>Power off</ListenFor>
-    <ListenFor>Shut down</ListenFor>
-    <Feedback>Goodbye!</Feedback>
+    <ListenFor>Power off [coffee] [machine]</ListenFor>
+    <Feedback>Goodbye</Feedback>
     <Navigate></Navigate>
   </Command>
-  <Command Name="MakeCoffee">
-    <Example>Make a pot of coffee</Example>
+  
+  <Command Name="TurnON">
+    <Example>Turn on coffee machine</Example>
+    <ListenFor>Turn on [coffee] [machine]</ListenFor>
+    <ListenFor>Power on [coffee] [machine]</ListenFor>
+    <Feedback>Hello would you like some coffee?</Feedback>
+    <Navigate></Navigate>
+  </Command>
+
+  <Command Name="SetAmount">
+    <Example>Make 2 cups</Example>
+    <ListenFor>[make] one [1] cup</ListenFor>
+    <ListenFor>[make] two [2] cups</ListenFor>
+    <ListenFor>[quater] [half] [full] pot</ListenFor>
+    <Feedback>Ok the amount is set</Feedback>
+    <Navigate></Navigate>
+  </Command>
+  
+  <Command Name="MakeStandardCoffee">
+    <Example>Make me a pot of coffee</Example>
     <ListenFor>Make [me] [a] [pot] coffee</ListenFor>
     <Feedback>MaKing a pot of coffee!</Feedback>
     <Navigate></Navigate>
   </Command>
-
   
+  <Command Name="MakeStongCoffee">
+    <Example>Make a pot of coffee</Example>
+    <ListenFor>Make [me] [a] [pot] stong coffee</ListenFor>
+    <Feedback>MaKing a pot of strong coffee!</Feedback>
+    <Navigate></Navigate>
+  </Command>
+  
+  <Command Name="MakeWeakCoffee">
+    <Example>Make a pot of coffee</Example>
+    <ListenFor>Make [me] [a] [pot] weak coffee</ListenFor>
+    <Feedback>MaKing a pot of weak coffee!</Feedback>
+    <Navigate></Navigate>
+  </Command>
+  
+  <Command Name="HotplateOn">
+    <Example>Turn on the hotplate</Example>
+    <ListenFor>[Turn] hotplate on</ListenFor>
+    <Feedback>Turning the hotplate on</Feedback>
+    <Navigate></Navigate>
+  </Command>
+  
+  <Command Name="HotplateOff">
+    <Example>Turn off the hotplate</Example>
+    <ListenFor>[Turn] hotplate off</ListenFor>
+    <Feedback>Turning the hotplate off</Feedback>
+    <Navigate></Navigate>
+  </Command>  
+
+  <Command Name="DefaultSetting">
+    <Example>Reset machine to default</Example>
+    <ListenFor>Reset [the] [coffee] [machine] [to] [default]</ListenFor>
+    <Feedback>Ok, I reset the coffee machine to default.</Feedback>
+    <Navigate></Navigate>
+  </Command>
 </CommandSet>
 
 </VoiceCommands>
