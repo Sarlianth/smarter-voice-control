@@ -7,6 +7,7 @@ import json
 API_METHOD_BREW = "brew"
 API_METHOD_RESET = "reset"
 API_METHOD_GRIND = "set_grind"
+API_METHOD_CUPS = "cups"
 
 return_code = ""
 
@@ -24,6 +25,38 @@ elif api_method == API_METHOD_RESET:
 	message_to_send = "\x10"
 elif api_method == API_METHOD_GRIND:
 	message_to_send = "\x3c\x7e"
+elif api_method == API_METHOD_CUPS:
+	n = input("How many cups? ")
+
+	if n == 1:
+		message_to_send = "\x36\01\x7e"
+	elif n == 2:
+		message_to_send = "\x36\02\x7e"
+	elif n == 3:
+		message_to_send = "\x36\03\x7e"
+	elif n == 4:
+		message_to_send = "\x36\04\x7e"
+	elif n == 5:
+		message_to_send = "\x36\05\x7e"
+	elif n == 6:
+		message_to_send = "\x36\06\x7e"
+	elif n == 7:
+		message_to_send = "\x36\07\x7e"
+	elif n == 8:
+		message_to_send = "\x36\08\x7e"
+	elif n == 9:
+		message_to_send = "\x36\09\x7e"
+	elif n == 10:
+		message_to_send = "\x36\10\x7e"
+	elif n == 11:
+		message_to_send = "\x36\11\x7e"
+	elif n == 12:
+		message_to_send = "\x36\12\x7e"
+	else:
+		message_to_send = "\x36\02\x7e"
+		print("Maximum of 12 cups!")
+	
+	print(message_to_send)
 
 #connection to machine
 try:
