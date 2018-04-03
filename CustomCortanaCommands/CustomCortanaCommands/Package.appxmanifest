@@ -43,7 +43,4 @@
     </Application>
   </Applications>
 
-  <Capabilities>
-    <rescap:Capability Name="extendedBackgroundTaskTime">
-  </Capabilities>
 </Package>

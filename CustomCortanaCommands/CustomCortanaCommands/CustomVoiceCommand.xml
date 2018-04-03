@@ -3,7 +3,7 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   
 <CommandSet xml:lang="en-us" Name="CustomCommandSet">
-<CommandPrefix> Hey Cortana </CommandPrefix>  
+<CommandPrefix>Smarter</CommandPrefix>  
   <Command Name="TurnOff">
     <Example>shut down, power off, I'm going to bed</Example>
     <ListenFor>Turn off [coffee] [machine]</ListenFor>
