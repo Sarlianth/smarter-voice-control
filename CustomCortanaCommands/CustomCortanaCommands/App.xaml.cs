@@ -99,35 +99,24 @@ namespace CustomCortanaCommands
 
 
 
-        protected override async void OnActivated(IActivatedEventArgs args)
+        protected override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
-
-            VoiceCommandActivatedEventArgs commandArgs = null;
-            Type navigateToType = null;
-
 
             // handle voice activaton here
             if (args.Kind == ActivationKind.VoiceCommand)
             {
-                var httpClient = new HttpClient();
-                // activated by voice command
-                //GET THE VOICE COMMAND AND ANY PARAMS 
-                commandArgs = args as VoiceCommandActivatedEventArgs;
+                VoiceCommandActivatedEventArgs cmd = args as VoiceCommandActivatedEventArgs;
+                SpeechRecognitionResult result = cmd.Result;
 
-                // get the object back from the result so we can parse it
-                SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+                string voiceCommandName = result.RulePath[0];
 
-                string voiceCommandName = speechRecognitionResult.RulePath[0];
-                string textSpoken = speechRecognitionResult.Text;
-
-                System.Diagnostics.Debug.WriteLine(voiceCommandName);
-                System.Diagnostics.Debug.WriteLine(textSpoken);
+                MessageDialog dialog = new MessageDialog("New coffee");
 
                 switch (voiceCommandName)
                 {
                     case "TurnOn":
-                        System.Diagnostics.Debug.WriteLine("Turning on");
+                        dialog.Content = "Turning on";
 
                         break;
                     case "TurnOff":
@@ -162,18 +151,22 @@ namespace CustomCortanaCommands
                         System.Diagnostics.Debug.WriteLine("reset to default");
 
                         break;
+
+                    default:
+                        Debug.WriteLine("Unknown command");
+                        break;
                 }
 
             }
         }
 
 
-            /// <summary>
-            /// Invoked when Navigation to a certain page fails
-            /// </summary>
-            /// <param name="sender">The Frame which failed navigation</param>
-            /// <param name="e">Details about the navigation failure</param>
-            void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        /// <summary>
+        /// Invoked when Navigation to a certain page fails
+        /// </summary>
+        /// <param name="sender">The Frame which failed navigation</param>
+        /// <param name="e">Details about the navigation failure</param>
+        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
             {
                 throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
             }

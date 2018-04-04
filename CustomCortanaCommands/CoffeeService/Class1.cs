@@ -1,4 +1,4 @@
-﻿using Windows.System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +7,9 @@ using Windows.ApplicationModel.AppService;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.VoiceCommands;
 
-namespace CortanaBackground
+namespace CoffeeService
 {
-    public sealed class InClassBackgroundService : IBackgroundTask
+    public sealed class Class1 : IBackgroundTask
     {
         private BackgroundTaskDeferral _deferral;
         // the background app service connection to Cortana

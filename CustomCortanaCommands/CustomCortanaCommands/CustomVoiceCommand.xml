@@ -3,16 +3,16 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   
 <CommandSet xml:lang="en-us" Name="CustomCommandSet">
-<CommandPrefix>Smarter</CommandPrefix>  
+<CommandPrefix>coffee </CommandPrefix>  
   <Command Name="TurnOff">
     <Example>shut down, power off, I'm going to bed</Example>
     <ListenFor>Turn off [coffee] [machine]</ListenFor>
     <ListenFor>Power off [coffee] [machine]</ListenFor>
     <Feedback>Goodbye</Feedback>
-    <Navigate></Navigate>
+    <VoiceCommandService Target="CoffeeService"/>
   </Command>
   
-  <Command Name="TurnON">
+  <Command Name="TurnOn">
     <Example>Turn on coffee machine</Example>
     <ListenFor>Turn on [coffee] [machine]</ListenFor>
     <ListenFor>Power on [coffee] [machine]</ListenFor>
