@@ -10,6 +10,9 @@ Develop an application that is controlled by natural means - Voice, Hand Gesture
 * Any Platform and Programming Language permitted.
 
 ## Introduction
+In our second semester of our final year of Software Developemnt we received a brief to create a Gesture based project using any language and any platform that will use human gestures or voice in order to operate. Upon hearing these requirements we teamed up in a group of three and decided to do something with Voice activation using Cortana. 
+
+One of us had a smarter coffee machine and since we are all programmers and we all love coffee we decided to implement coffee brewing and voice activation. The idea was that when programming we don't want to stand up, brew coffee and wait for it to make, so in order to avoid the time wasting we decided that we will be able to just speak and have the coffee made for us and this will alow for us to continue working and have coffee made for us while coding and when the coffee is made we can just go and get it without waiting for the coffee to be brewed.
 
 
 ## Contributors:
