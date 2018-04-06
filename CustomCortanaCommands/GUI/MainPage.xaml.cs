@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,8 +39,19 @@ namespace GUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://127.0.0.1:5000/api/brew/2";
-            FetchAsync(url);
+            string url = "";
+            if (cups_text.Text.Length >= 1)
+            {
+                url = "http://127.0.0.1:5000/api/brew/" + cups_text.Text;
+                FetchAsync(url);
+            }
+            else
+            {
+                info_box.Text = "Smarter Control " + "Please specify cups of coffee";
+            }
+
+            //string url = "http://127.0.0.1:5000/api/brew/" + cups;
+            
         }
 
         public async Task<string> FetchAsync(string url)
@@ -53,8 +65,10 @@ namespace GUI
                 jsonString = reader.ReadToEnd();
             }
 
-           
+            info_box.Text = "Smarter Control " + jsonString;
 
+            //var dialog = new Windows.UI.Popups.MessageDialog(jsonString);
+            //dialog.ShowAsync();
             return jsonString;
         }
     }

@@ -8,10 +8,22 @@
     mc:Ignorable="d">
 
     <Grid Background="WhiteSmoke">
-        
-        <Button Content="BREW" HorizontalAlignment="Left" Margin="33,29,0,0" VerticalAlignment="Top" Height="100" Width="400" Click="Button_Click"/>
-        <Button Content="RESET" HorizontalAlignment="Left" Margin="40,269,0,0" VerticalAlignment="Top" Height="100" Width="400"/>
-        <Button Content="EXIT" HorizontalAlignment="Left" Margin="87,484,0,0" VerticalAlignment="Top" Height="100" Width="400" Click="Button_Click_1"/>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="info_box" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">Smarter Control</TextBlock>
+        <TextBox Name="cups_text" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="1"></TextBox>
+        <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="BREW" Click="Button_Click"/>
+        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="RESET"/>
+        <Button Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="EXIT" Click="Button_Click_1"/>
+        
     </Grid>
 </Page>
