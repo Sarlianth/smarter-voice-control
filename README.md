@@ -91,3 +91,16 @@ When developing the custom Cortana commands we were able to create them using C#
 Upon further inspection and contacting our lecturer we came to the conclusion that this bug is out of our control and that the code we have provided worked as intended and our only option was to develop the application as intended and not to worry about the bug since it was not our fault it wasn't working so we continued to develop the application but this time instead of using Cortana as the main Technology that the application will be based on we will instead create a GUI for the user with buttons in it that the user can click and basically these buttons are a replacement for the voice commands since Cortana can't recognize them.
 
 These buttons will allow the user to basically brew coffee the same way as if they were speaking to Cortana.
+
+## Architecture for the solution
+
+### Front-End
+
+* GUI - The Graphical User Interface is a simple desktop Application that has three buttons that allow the user to either brew coffee, Reset the machine to it's base options or turn it off. These buttons impplement commands for the Smarter Coffee Machine instead of implementing the Custom Cortana Commands since there is a problem with the latest update.
+
+### Back-End
+* Script.py - This Python script is our API to connect to the coffee machine by using it's IP address and being able to operate it without physically touching it. By using this script we are able to control the amount of cups that we want to brew without touching the coffee machine.
+
+* CustomCortanaCommands - This was used in the beginning in order to create custom Cortana commands to be used vocally in order to brew coffee but since we have ran into the problem with Cortana this is no longer used in the final solution of the project.
+
+## Conclusion and Recommendations
