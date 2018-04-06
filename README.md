@@ -51,5 +51,15 @@ Since the application is supposed to used a gesture based, we decided to go with
 
 In order to involve Cortana in the project we created simple to use commands that will allow her to recognize the prefix that allows the usage of custom made commands.
 
+## Design Process
+
+While creating the application we did a step by step process:
+* Connect to the coffee machine using Python
+* Create Custom Commands using C#
+* Connecting the two in order to make a working application
+
+While making the application we were able to connect to the coffee machine using Python without any problems, we were able to get the IP address of the coffee machine and were able to connect to it.
+
+When developing the custom Cortana commands we were able to create them using C# but we were unable to use them when talking to Cortana while testing on multiple machines. We were unable to see the problem in our code so we decided to speak to our lecturer and do extended research as to why it may not work. Once our lecturer has tested our commands and tried running it on his local machine he has told us that there is a bug in the latest release of Cortana which only makes Cortana do web search when asking her to do something. Upon more research we have found out that it's not only us that have this problem, we viewd on the Microsoft official page that other developers have this problem since the release of the Creators Update.
 
 
