@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCortanaCommands", "Cu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeService", "CoffeeService\CoffeeService.csproj", "{95FC083C-EDB9-4302-95BE-B8F4DFC2440C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,26 @@ Global
 		{95FC083C-EDB9-4302-95BE-B8F4DFC2440C}.Release|x64.Build.0 = Release|x64
 		{95FC083C-EDB9-4302-95BE-B8F4DFC2440C}.Release|x86.ActiveCfg = Release|x86
 		{95FC083C-EDB9-4302-95BE-B8F4DFC2440C}.Release|x86.Build.0 = Release|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|ARM.Build.0 = Debug|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x64.ActiveCfg = Debug|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x64.Build.0 = Debug|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x64.Deploy.0 = Debug|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x86.ActiveCfg = Debug|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x86.Build.0 = Debug|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Debug|x86.Deploy.0 = Debug|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|Any CPU.ActiveCfg = Release|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|ARM.ActiveCfg = Release|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|ARM.Build.0 = Release|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|ARM.Deploy.0 = Release|ARM
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x64.ActiveCfg = Release|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x64.Build.0 = Release|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x64.Deploy.0 = Release|x64
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x86.ActiveCfg = Release|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x86.Build.0 = Release|x86
+		{A4E5BD38-B819-4623-B1C1-4459DF9BACB3}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
