@@ -14,6 +14,11 @@ In our second semester of our final year of Software Developemnt we received a b
 
 One of us had a smarter coffee machine and since we are all programmers and we all love coffee we decided to implement coffee brewing and voice activation. The idea was that when programming we don't want to stand up, brew coffee and wait for it to make, so in order to avoid the time wasting we decided that we will be able to just speak and have the coffee made for us and this will alow for us to continue working and have coffee made for us while coding and when the coffee is made we can just go and get it without waiting for the coffee to be brewed.
 
+The Application uses:
+
+* a C# UWP application - That creates a back-end application that creates custom Cortana commands to be used when used the key-word "Coffee" that enables the commands in Cortana as well as creating a User Friendly Application that allows the user to speak to Cortana and start coffee brewing.
+* Python - We used a python script that connects to the coffee machine and allows us to do our own application that will allow for our own custom commands to be used.
+
 
 ## Contributors:
 [Adrian Sypos](https://github.com/sarlianth)
@@ -33,6 +38,18 @@ Cortana is Microsofts Visual Assistant created for Windows 10, Windows 10 Mobile
 
 ### Smarter Coffee Machine 
 The Smarter Coffee Machine is a coffee machine developed to brew coffee by either using your phone or by just using the coffee machine itself. It allows you to choose the strenght of your coffee to your liking, you can choose the amount of cups to be brewed, it brews fresh coffee using fresh coffee beans.
+
+### C#
+Is a multi-purpose programming language developed by Microsoft. The purpose of the programming language is to create Common Language Infrastructure (CLI) so that it allows multiple high-level languages to be used on different computer platforms without having to be re-written.
+
+### Python
+Python is a high-level programming language for general-purpose programming. Python does not use semi-colons, instead it used white space indentation as its formatting. Python can be used on many operating systems and allows for endless implementations.
+
+## Voice Activation
+
+Since the application is supposed to used a gesture based, we decided to go with voice activation since its the easiest ways of doing something : speaking. The idea came from just simply speaking to Cortana in order to brew coffee which makes it simple to use and takes no effort from the user to do.
+
+In order to involve Cortana in the project we created simple to use commands that will allow her to recognize the prefix that allows the usage of custom made commands.
 
 
 
