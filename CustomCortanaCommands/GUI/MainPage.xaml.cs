@@ -38,24 +38,22 @@ namespace GUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            runIt();
+            string url = "http://127.0.0.1:5000/api/brew/2";
+            FetchAsync(url);
         }
 
-        async void runIt()
+        public async Task<string> FetchAsync(string url)
         {
-            // Path to the file in the app package to launch
-            string imageFile = @"Assets\smarter.py";
+            string jsonString;
 
-            var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
+            using (var httpClient = new System.Net.Http.HttpClient())
+            {
+                var stream = await httpClient.GetStreamAsync(url);
+                StreamReader reader = new StreamReader(stream);
+                jsonString = reader.ReadToEnd();
+            }
 
-            if (file != null)
-            {
-               
-            }
-            else
-            {
-                // Could not find file
-            }
+            return jsonString;
         }
     }
 }

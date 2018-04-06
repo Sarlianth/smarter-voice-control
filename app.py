@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return "Hello, World!"
 	
-@app.route('/api/brew/<int:cups>', methods=['POST', 'GET'])
+@app.route('/api/brew/<int:cups>', methods=['GET'])
 def brew_coffee(cups):
 	#print(cups)
 	if (cups >= 1 and cups <= 12):
