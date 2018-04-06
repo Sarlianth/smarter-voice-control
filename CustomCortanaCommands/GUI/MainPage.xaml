@@ -22,7 +22,7 @@
         <TextBlock Name="info_box" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">Smarter Control</TextBlock>
         <TextBox Name="cups_text" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="1"></TextBox>
         <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="BREW" Click="Button_Click"/>
-        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="RESET"/>
+        <Button Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="RESET" Click="Button_Click_2"/>
         <Button Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="EXIT" Click="Button_Click_1"/>
         
     </Grid>

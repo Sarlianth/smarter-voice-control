@@ -63,6 +63,7 @@ namespace GUI
                 var stream = await httpClient.GetStreamAsync(url);
                 StreamReader reader = new StreamReader(stream);
                 jsonString = reader.ReadToEnd();
+                //stream.Dispose();
             }
 
             info_box.Text = "Smarter Control " + jsonString;
@@ -70,6 +71,16 @@ namespace GUI
             //var dialog = new Windows.UI.Popups.MessageDialog(jsonString);
             //dialog.ShowAsync();
             return jsonString;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string url = "";
+            url = "http://127.0.0.1:5000/api/reset/";
+            FetchAsync(url);
+
+            //info_box.Text = "Smarter Control " + "Default settings applied";
+
         }
     }
 }
