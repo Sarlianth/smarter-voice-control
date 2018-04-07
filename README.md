@@ -104,7 +104,7 @@ These buttons will allow the user to basically brew coffee the same way as if th
 * GUI - The Graphical User Interface is a simple desktop Application that has three buttons that allow the user to either brew coffee, Reset the machine to it's base options or turn it off. These buttons impplement commands for the Smarter Coffee Machine instead of implementing the Custom Cortana Commands since there is a problem with the latest update.
 
 ### Back-End
-* Script.py - This Python script is our API to connect to the coffee machine by using it's IP address and being able to operate it without physically touching it. By using this script we are able to control the amount of cups that we want to brew without touching the coffee machine.
+* app.py & smarter.py - These Python scripts are the API's used to connect to the coffee machine by using it's IP address and being able to operate it without physically touching it. By using this script we are able to control the amount of cups that we want to brew from the comfort of our desk.
 
 * CustomCortanaCommands - This was used in the beginning in order to create custom Cortana commands to be used vocally in order to brew coffee but since we have ran into the problem with Cortana this is no longer used in the final solution of the project.
 
