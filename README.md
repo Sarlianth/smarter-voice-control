@@ -24,6 +24,9 @@ The Application uses:
 
 
 * a C# UWP application - That creates a back-end application that creates custom Cortana commands to be used when used the key-word “Coffee” that enables the commands in Cortana as well as creating a User Friendly Application that allows the user to speak to Cortana and start coffee brewing.
+
+* Http creates the connection between the 2 technologies which allows us to call out python script using a flask API to handle the routes and logic appropriateluy. A http request is fired off from the UWP after making a verbal request to Cortana, this http request hits a url which has been exposed by our RESTful api, which then figures which using its routes will then handle the request, and fire off another to the Smarter Coffee Machine, thus allowing us to brew a lovely pot of Java from the comfort of our desk... Now all we need is a robot to bring it to us...
+
 * Python - We used a python script that connects to the coffee machine and allows us to do our own application that will allow for our own custom commands to be used.
 
 
@@ -33,7 +36,7 @@ The Application uses:
 [Adrian Sypos](https://github.com/sarlianth)
 
 
-[Daniel Verdagio](https://github.com/verdagio)
+[Daniel Verdejo](https://github.com/verdagio)
 
 
 [Robert Kiliszewski](https://github.com/robertkiliszewski)
@@ -63,6 +66,8 @@ Is a multi-purpose programming language developed by Microsoft. The purpose of t
 ### Python
 Python is a high-level programming language for general-purpose programming. Python does not use semi-colons, instead it used white space indentation as its formatting. Python can be used on many operating systems and allows for endless implementations.
 
+### Flask
+Flask is a framework for building RESTful api's via python.
 
 ## Voice Activation
 
