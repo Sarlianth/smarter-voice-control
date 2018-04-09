@@ -108,4 +108,6 @@ These buttons will allow the user to basically brew coffee the same way as if th
 
 * CustomCortanaCommands - This was used in the beginning in order to create custom Cortana commands to be used vocally in order to brew coffee but since we have ran into the problem with Cortana this is no longer used in the final solution of the project.
 
-## Conclusion and Recommendations
+## Conclusion
+
+In the end we had to switch to a Flask API in order to do a HTTP request to our smarter coffee machine api that would then call our function in the uwp in order to brew coffee since we were not able to test the voice commands due to the technical error with the latest Cortana update.
