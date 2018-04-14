@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Web.Http;
 
 using Windows.Media.SpeechRecognition;
 using Windows.ApplicationModel.VoiceCommands;
@@ -102,62 +101,55 @@ namespace CustomCortanaCommands
         protected override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
+            VoiceCommandActivatedEventArgs cmd = args as VoiceCommandActivatedEventArgs;
+            SpeechRecognitionResult result = cmd.Result;
+
+            string voiceCommandName = result.RulePath[0];
+
+            MessageDialog dialog = new MessageDialog("New coffee");
 
             // handle voice activaton here
             if (args.Kind == ActivationKind.VoiceCommand)
             {
-                VoiceCommandActivatedEventArgs cmd = args as VoiceCommandActivatedEventArgs;
-                SpeechRecognitionResult result = cmd.Result;
-
-                string voiceCommandName = result.RulePath[0];
-
-                MessageDialog dialog = new MessageDialog("New coffee");
-
+                String url = "";
+                String amount = "";
                 switch (voiceCommandName)
                 {
-                    case "TurnOn":
-                        dialog.Content = "Turning on";
-
-                        break;
-                    case "TurnOff":
-                        System.Diagnostics.Debug.WriteLine("Turning off");
-
-                        break;
                     case "SetAmount":
                         System.Diagnostics.Debug.WriteLine("Setting the amount");
-
+                        amount = "6"; // setting a defualt amount because we do not know how this will work as cortana cannot be tested 
+                        url = "http://127.0.0.1:5000/api/brew/"+amount;
                         break;
                     case "MakeStandardCoffee":
                         System.Diagnostics.Debug.WriteLine("Standard coffee selected");
-
-                        break;
-                    case "MakeStrongCoffee":
-                        System.Diagnostics.Debug.WriteLine("strong coffee selected");
-
-                        break;
-                    case "MakeWeakCoffee":
-                        System.Diagnostics.Debug.WriteLine("weak coffee selected");
-
-                        break;
-                    case "HotplateOn":
-                        System.Diagnostics.Debug.WriteLine("hotplate on");
-
-                        break;
-                    case "HotplateOff":
-                        System.Diagnostics.Debug.WriteLine("hotplate off");
-
+                        url = "http://127.0.0.1:5000/api/brew/12";
                         break;
                     case "DefaultSetting":
                         System.Diagnostics.Debug.WriteLine("reset to default");
-
+                        url = "http://127.0.0.1:5000/api/reset/";
                         break;
-
                     default:
-                        Debug.WriteLine("Unknown command");
+                        Debug.WriteLine("Unknown command or command not registered");
                         break;
                 }
-
+                FetchAsync(url);
             }
+        }
+
+         public async Task<string> FetchAsync(string url){
+            string jsonString;
+
+            using (var httpClient = new System.Net.Http.HttpClient())
+            {
+                var stream = await httpClient.GetStreamAsync(url);
+                StreamReader reader = new StreamReader(stream);
+                jsonString = reader.ReadToEnd();
+                //stream.Dispose();
+            }
+
+           "Smarter Control " + jsonString;
+
+            return jsonString;
         }
 
 
