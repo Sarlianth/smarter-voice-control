@@ -3,6 +3,7 @@
 
 This repository is for our Gesture Based UI project in 4th year software development in Galway-Mayo Institute of Technology. The purpose of the project is to create an application using the Smarter coffee machine and Cortana in order to brew coffee using voice commands.
 
+[**CLICK HERE FOR THE VIDEO OF WORKING PROJECT**](https://youtu.be/Nih-y2uPVd8)
 
 ## Project Requirements
 Develop an application that is controlled by natural means - Voice, Hand Gestures etc.
